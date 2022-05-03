@@ -95,7 +95,9 @@ function App() {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
-        <Box width="90%" height="90vh" margin="1rem" display="flex" flexDirection="row" justifyContent="center" alignItems="center">
+       
+        <div className="moniter">
+           <Box width="100%" height="90vh" margin="1rem" display="flex" flexDirection="row" justifyContent="center" alignItems="center" style={{backgroundColor: "red"}}>
           <Card>
             <CardContent>
               <Box width="100%"  >
@@ -107,6 +109,35 @@ function App() {
 
           </Card>
         </Box>
+        </div>
+        <div className="tablet">
+           <Box width="100%" height="90vh" margin="1rem" display="flex" flexDirection="row" justifyContent="center" alignItems="center" style={{backgroundColor: "blue"}}>
+          <Card>
+            <CardContent>
+              <Box width="100%"  >
+                <Typography variant="subtitle1" >
+                  Create Question Paper
+                </Typography>
+              </Box>
+            </CardContent>
+
+          </Card>
+        </Box>
+        </div>
+        <div className="mobile">
+           <Box width="100%" height="90vh" margin="1rem" display="flex" flexDirection="row" justifyContent="center" alignItems="center" style={{backgroundColor: "yellow"}}>
+          <Card>
+            <CardContent>
+              <Box width="100%"  >
+                <Typography variant="subtitle1" >
+                  Create Question Paper
+                </Typography>
+              </Box>
+            </CardContent>
+
+          </Card>
+        </Box>
+        </div>
       </ThemeProvider>
     </StyledEngineProvider>
   );
