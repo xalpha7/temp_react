@@ -22,6 +22,7 @@ import {
   IconButton,
 } from '@mui/material';
 import { ThemeProvider, StyledEngineProvider, createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { useState } from 'react';
 import './App.css';
 
 
@@ -92,11 +93,28 @@ theme = responsiveFontSizes(theme);
 
 
 function App() {
+
+
+  const [qOne, setQone ] = useState(null);
+  const [qTwo, setQtwo ] = useState(null);
+
+  const handleSubmit = () => {
+    // console.log(qOne);
+    // console.log(qTwo);
+
+    const question = {
+      "qOne" : qOne,
+      "qTwo" : qTwo,
+    }
+
+    console.log(question);
+  }
+
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
        
-        <div className="moniter">
+        {/* <div className="moniter">
            <Box width="100%" height="90vh" margin="1rem" display="flex" flexDirection="row" justifyContent="center" alignItems="center" style={{backgroundColor: "red"}}>
           <Card>
             <CardContent>
@@ -137,7 +155,24 @@ function App() {
 
           </Card>
         </Box>
-        </div>
+        </div> */}
+        <Box width="100%" height="100vh" display="flex" flexDirection="column" justifyContent="center"  alignItems="center">
+        <TextField
+         name="question1" 
+         label="question1" 
+         value={qOne}
+         onChange={(e) => setQone(e.target.value)}
+         />
+
+         <TextField
+         name="question1" 
+         label="question1" 
+         value={qTwo}
+         onChange={(e) => setQtwo(e.target.value)}
+         />
+
+        <Button variant="contained" color="primary" onClick={handleSubmit}>Submit</Button>
+        </Box>
       </ThemeProvider>
     </StyledEngineProvider>
   );
